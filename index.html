@@ -3,135 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Cybersécurité - TEMPLATE</title>
+    <title>CV Cybersécurité - John Doe</title>
     <style>
         body {
-            background: #181c2b;
-            color: #f6f7fb;
-            font-family: 'Inter', Arial, sans-serif;
+            background: #161c28;
+            color: #f8fafe;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
         .container {
-            width: 85%;
-            max-width: 900px;
-            margin: 50px auto;
-            background: rgba(26, 28, 40, 0.93);
+            width: 88%;
+            max-width: 960px;
+            margin: 48px auto;
+            background: rgba(23,28,47,.96);
             border-radius: 18px;
-            box-shadow: 0 0 24px #00ffa247;
-            padding: 38px 46px 38px 46px;
-            position: relative;
+            box-shadow: 0 4px 40px #10ffd687;
+            padding: 52px 54px 48px 54px;
         }
         header {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 30px;
         }
         .photo {
-            width: 110px;
-            height: 110px;
-            background: #061e2b;
-            border-radius: 50%;
-            border: 3px solid #42f7b6;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            background: url('https://randomuser.me/api/portraits/men/42.jpg');
+            background-size: cover;
+            border: 3px solid #25f5b8;
         }
         .cv-title {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: bold;
-            color: #42f7b6;
+            color: #1fffc3;
         }
         .contact {
-            margin-top: 8px;
-            font-size: 1.05rem;
+            margin-top: 9px;
+            font-size: 1.06rem;
         }
         section {
-            margin-top: 34px;
+            margin-top: 40px;
         }
         h2 {
-            color: #38ecff;
-            padding-bottom: 6px;
-            border-bottom: 1.5px solid #38ecff22;
-            margin-bottom: 13px;
+            color: #43d5ff;
+            padding-bottom: 7px;
+            border-bottom: 1.2px solid #28d5f933;
+            margin-bottom: 15px;
         }
         .skills-list, .exp-list, .educ-list {
             list-style: none;
             padding: 0;
         }
         .skills-list li, .exp-list li, .educ-list li {
-            margin: 0 0 11px 0;
+            margin: 0 0 12px 0;
+        }
+        .badge {
+            display: inline-block;
+            background: #0ba743dd;
+            color: #fff;
+            border-radius: 5px;
+            padding: 2px 13px 2px 10px;
+            font-size: 1em;
+            margin-left: 12px;
+        }
+        .timeline {
+            border-left: 3px solid #1fffc3;
+            padding-left: 20px;
+            margin-left: 5px;
+        }
+        .timeline-entry {
+            margin-bottom: 32px;
+        }
+        .project-card {
+            background: #232c45;
+            border-left: 6px solid #0ba743;
+            color: #f8fff8;
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+            transition: background 0.18s;
+        }
+        .project-card:hover {
+            background: #24cfa176;
         }
         .interact {
-            margin: 22px 0 0 0;
+            margin: 29px 0 0 0;
         }
         .inter-btn {
             background: #0c4136;
             color: #fff;
             border: none;
-            padding: 10px 32px;
+            padding: 11px 34px;
             border-radius: 7px;
             font-size: 1rem;
-            margin-right: 16px;
-            transition: background 0.25s;
+            margin-right: 18px;
+            transition: background 0.22s;
             cursor: pointer;
         }
         .inter-btn:hover {
-            background: #1effb6;
-            color: #181c2b;
+            background: #23ffe9;
+            color: #1c222b;
         }
     </style>
+    <script>
+        function showFlag() {
+            let base64 = "R1Z7Q3liZXJNYXN0ZXJ9";
+            let flag = atob(base64);
+            alert("Bravo, tu as trouvé le flag : " + flag);
+        }
+        let xp = 0;
+        function addXP() {
+            xp += 100;
+            document.getElementById('xp-bar').style.width = Math.min(xp/20, 100) + '%';
+            document.getElementById('xp-text').innerText = xp + ' / 2000 XP';
+            if (xp >= 2000) alert('🏆 Succès débloqué : Maître en cyber CV !');
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="photo"></div>
             <div>
-                <div class="cv-title">Nom Prénom</div>
+                <div class="cv-title">John Doe</div>
                 <div class="contact">
-                    <span>Email : </span><br/>
-                    <span>Téléphone : </span><br/>
-                    <span>Ville : </span>
+                    <span>Email : johndoe.pro@protonmail.com</span><br/>
+                    <span>Téléphone : +33 6 12 34 56 78</span><br/>
+                    <span>Ville : Paris (France)</span>
                 </div>
             </div>
         </header>
+        <div style="margin:20px 0 10px 0;">
+            <div style="height:10px;background:#232c45;border-radius:5px;overflow:hidden;margin-bottom:4px;">
+                <div id="xp-bar" style="width:0;height:10px;background:linear-gradient(90deg,#25f5b8,#49dfff 75%);transition:width .4s;"></div>
+            </div>
+            <span id="xp-text">0 / 2000 XP</span>
+            <button class="inter-btn" onclick="addXP()">Gagner de l'XP !</button>
+        </div>
 
         <section>
-            <h2>Profil Professionnel</h2>
-            <p style="line-height:1.7;">Votre accroche professionnelle en une phrase.<br>
-            (Spécialisation, motivation, certifications...)</p>
+            <h2>Résumé Professionnel</h2>
+            <p>Expert en cybersécurité avec plus de 10 ans d'expérience, certifié CISSP, OSCP et CEH. Spécialiste en architecture de sécurité, pentest, réponse aux incidents et investigation numérique. Capable de piloter des équipes pluridisciplinaires et de concevoir des solutions innovantes pour la protection des SI.</p>
         </section>
-
         <section>
             <h2>Compétences Techniques</h2>
             <ul class="skills-list">
-                <li>Compétence 1</li>
-                <li>Compétence 2</li>
-                <li>Compétence 3</li>
-                <li>Compétence 4</li>
+                <li>Rédaction et audit de politiques de sécurité <span class="badge">Expert</span></li>
+                <li>Pentest (Web, Réseaux, AD, Mobile) <span class="badge">Expert</span></li>
+                <li>Analyse forensique, investigation numérique <span class="badge">Avancé</span></li>
+                <li>Threat hunting / Blue Team <span class="badge">Expert</span></li>
+                <li>Scripting Python, Bash <span class="badge">Avancé</span></li>
+                <li>Cloud Security (AWS, Azure) <span class="badge">Intermédiaire</span></li>
+                <li>Gestion de projets sécurité <span class="badge">Confirmé</span></li>
+                <li>Campagnes Red/Blue Team <span class="badge">Avancé</span></li>
             </ul>
         </section>
         <section>
-            <h2>Expérience Professionnelle</h2>
-            <ul class="exp-list">
-                <li><strong>Poste 1</strong> - Entreprise (Année - Année)</li>
-                <li><strong>Poste 2</strong> - Entreprise (Année - Année)</li>
-            </ul>
+            <h2>Expériences Professionnelles</h2>
+            <div class="timeline">
+                <div class="timeline-entry">
+                    <strong>Security Architect Senior</strong> @ SecureOps Corp (2022 - aujourd'hui)<br>
+                    - Pilotage de la stratégie cyber, analyse SIEM avancée, mentoring 5 analystes<br>
+                    - Conception SOC cloud & déploiement playbooks automatisés
+                </div>
+                <div class="timeline-entry">
+                    <strong>Pentester et Consultant Sécurité</strong> @ CyberSafe Solutions (2017-2022)<br>
+                    - Pentest et campagnes Red Team multisites, audit Active Directory, rapports CISO<br>
+                    - Incident response, formation utilisateurs (phishing, sécurité)
+                </div>
+                <div class="timeline-entry">
+                    <strong>Analyste SOC / CSIRT</strong> @ Shield Security (2015-2017)<br>
+                    - Monitoring, threat hunting, investigation post-compromission, coordination CERT
+                </div>
+            </div>
         </section>
         <section>
-            <h2>Formation & Certifications</h2>
+            <h2>Formations & Certifications</h2>
             <ul class="educ-list">
-                <li>Diplôme / Certification 1 (Année)</li>
-                <li>Diplôme / Certification 2 (Année)</li>
+                <li>MSc Cybersécurité, ENSIBS (2013-2015)</li>
+                <li>CISSP (2020)</li>
+                <li>OSCP (2019)</li>
+                <li>Certified Ethical Hacker (CEH) (2017)</li>
             </ul>
+        </section>
+        <section>
+            <h2>Projets / Réalisations</h2>
+            <div class="project-card">Audit sécurité cloud pour une fintech : Zéro incident majeur en 18 mois, conformité ISO 27001 obtenue, SIEM modernisé.</div>
+            <div class="project-card">Investigation forensique suite à un ransomware (2023) sur 412 postes, récupération de 98% des données, rapport judiciaire rédigé.</div>
+            <div class="project-card">Mise en place d'une plateforme Bug Bounty interne (avec scoring automatisé des vulnérabilités).</div>
+            <div class="project-card">Participation régulière à des CTFs (DEFCON, Root-Me, HackTheBox), une dizaine de TOP 3 en équipe.</div>
         </section>
         <section>
             <h2>Centres d'intérêt</h2>
             <ul>
-                <li>Intérêt 1</li>
-                <li>Intérêt 2</li>
+                <li>Osint, CTF, Crypto challenges, Reverse engineering</li>
+                <li>Science-fiction, échecs, jeux de stratégie</li>
             </ul>
         </section>
         <section class="interact">
-            <button class="inter-btn" onclick="alert('Merci d\'avoir cliqué !')">Cliquez-moi</button>
-            <button class="inter-btn" onclick="alert('Astuce sécurité : activez toujours l\'authentification à deux facteurs !')">Astuce Sécurité</button>
+            <button class="inter-btn" onclick="showFlag()">Mini-jeu Flag : Trouve le Flag!</button>
+            <button class="inter-btn" onclick="alert('Conseil : Change ton mot de passe tous les 6 mois !')">Conseil Sécurité</button>
         </section>
     </div>
 </body>
